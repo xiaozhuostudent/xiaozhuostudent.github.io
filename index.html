@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界地球日</title>
+    <style>
+        /* 基础样式 */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background: #2c3e50;
+            padding: 1rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* 头部区域 */
+        header {
+            background: #46e187d3;
+            color: white;
+            text-align: center;
+        }
+        header img {
+            width:100vh;  /* 调整logo尺寸 */
+            
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+        }
+
+        /* 主要内容区 */
+        main {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 边栏样式 */
+        aside {
+            flex: 0 0 250px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        aside h3 {
+            color: #27ae60;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        /* 正文区域 */
+        section {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        section img {
+    width: 80%;         /* 原100%改为90%留出边距 */
+    max-width: 200px;   /* 最大宽度从600px缩小到400px */
+    display: block;     /* 新增块级显示 */
+    margin: 0 auto 1.5rem; /* 上下0 左右自动居中 底部间距增大 */
+    border-radius: 8px;
+}
+
+        /* 页脚 */
+        footer {
+            background: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            main {
+                flex-wrap: wrap;
+                padding: 1rem;
+            }
+            aside {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- 实验2要求1：修改logo路径 -->
+        <img src="images/headerimg.png" alt="地球日logo">
+        
+    </header>
+    
+    <nav>
+        <ul>
+            <!-- 实验2要求2：修改导航链接 -->
+            <li><a href="index.html">首页</a></li>
+            <li><a href="list.html">目录</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <aside>
+            <h3>做什么</h3>
+            <ul>
+                <!-- 实验2要求2：当前位置链接 -->
+                <li><a href="#current">倡导低碳生活</a></li>
+                <li><a href="#current">从身边的小事做起</a></li>
+                <li><a href="#current">从节约资源做起</a></li>
+                <li><a href="#current">科学发展</a></li>
+                <li><a href="#current">公众参与</a></li>
+                <li><a href="#current">防治有毒化学品污染</a></li>
+            </ul>
+        </aside>
+
+        <section>
+            <!-- 实验2要求1：添加内容区图片 -->
+            <img src="images/greenery.png" alt="环保绿化">
+            <h2>地球日</h2>
+            <p>每年的4月22日，是一个专为世界环境保护而设立的节日，旨在提高民众对于现有环境问题的意识，并动员民众参与到环保运动中，通过绿色低碳生活，改善地球的整体环境。地球日由盖洛登·尼尔森和丹尼斯·海斯于1970年发起。地球日的活动已发展至全球192个国家，每年有超过10亿人参与其中，使其成为世界上最大的民间环保节日。中国从20世纪90年代起，每年都会在4月22日举办世界地球日活动。1970年4月22日的地球日活动，是人类有史以来第一次规模宏大的群众性环境保护运动。作为人类现代环保运动的开端，它推动了西方国家环境法规的建立。</p>
+            <p>1970年4月22日的地球日活动，是人类有史以来第一次规模宏大的群众性地球日，作为人类现代环保运动的开端，它推动了西方国家环境法规的建立。</p>
+        </section>
+
+        <aside>
+            <h3>目录</h3>
+            <ul>
+                <!-- 实验2要求2：页面开始位置链接 -->
+                <li><a href="#top">活动影响</a></li>
+                <li><a href="#top">创始人</a></li>
+                <li><a href="#top">历年主题</a></li>
+                <li><a href="#top">历年国内活动</a></li>
+                <li><a href="#top">小背景</a></li>
+                <li><a href="#top">公众参与</a></li>
+                <li><a href="#top">环保组织</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy;2018, 我们的地球日</p>
+    </footer>
+</body>
+</html>
