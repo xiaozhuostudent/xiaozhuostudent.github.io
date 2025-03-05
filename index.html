@@ -4,123 +4,251 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>世界地球日</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* 基础样式 */
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            background: #f5f5f5;
+        :root {
+            --primary: #2A9D8F;
+            --secondary: #264653;
+            --accent: #E9C46A;
+            --light: #F4F4F4;
+            --shadow: 0 8px 24px -6px rgba(0,0,0,0.1);
         }
 
-        /* 导航栏样式 */
-        nav {
-            background: #2c3e50;
-            padding: 1rem;
+        body {
+            margin: 0;
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.8;
+            background: var(--light);
+            color: #444;
         }
+
+        /* 渐变头部 */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #21897E 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--light);
+            transform: rotate(-2deg) scale(1.2);
+        }
+
+        header img {
+            max-width: 320px;
+            height: auto;
+            margin: 0 auto;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+            transition: transform 0.3s ease;
+        }
+
+        header:hover img {
+            transform: scale(1.02);
+        }
+
+        /* 现代导航栏 */
+        nav {
+            background: rgba(255,255,255,0.95);
+            padding: 1.2rem;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(8px);
+            box-shadow: var(--shadow);
+            z-index: 100;
+        }
+
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 3rem;
         }
+
         nav a {
-            color: #ecf0f1;
+            color: var(--secondary);
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         nav a:hover {
-            color: #3498db;
+            background: rgba(var(--primary), 0.1);
+            color: var(--primary);
+            transform: translateY(-2px);
         }
 
-        /* 头部区域 */
-        header {
-            background: #46e187d3;
-            color: white;
-            text-align: center;
-        }
-        header img {
-            width:100vh;  /* 调整logo尺寸 */
-            
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
-        }
-
-        /* 主要内容区 */
+        /* 卡片式布局 */
         main {
-            display: flex;
-            gap: 2rem;
-            padding: 2rem;
-            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 240px 1fr 240px;
+            gap: 2.5rem;
+            padding: 4rem 2rem;
+            max-width: 1280px;
             margin: 0 auto;
         }
 
-        /* 边栏样式 */
         aside {
-            flex: 0 0 250px;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        aside h3 {
-            color: #27ae60;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.5rem;
-        }
-
-        /* 正文区域 */
-        section {
-            flex: 1;
             background: white;
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 100px;
+            height: fit-content;
         }
+
+        aside h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin: 0 0 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light);
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        aside li {
+            margin-bottom: 0.8rem;
+        }
+
+        aside a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.2s;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        aside a:hover {
+            background: rgba(var(--primary), 0.05);
+            color: var(--primary);
+            padding-left: 1rem;
+        }
+
+        section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
         section h2 {
-            color: #2c3e50;
-            margin-top: 0;
+            color: var(--secondary);
+            font-size: 2.2rem;
+            margin: 0 0 2rem;
+            position: relative;
         }
+
+        section h2::after {
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+
         section img {
-    width: 80%;         /* 原100%改为90%留出边距 */
-    max-width: 200px;   /* 最大宽度从600px缩小到400px */
-    display: block;     /* 新增块级显示 */
-    margin: 0 auto 1.5rem; /* 上下0 左右自动居中 底部间距增大 */
-    border-radius: 8px;
-}
-
-        /* 页脚 */
-        footer {
-            background: #34495e;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+            width: 100%;
+            max-width: 560px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 2rem 0;
+            transition: transform 0.3s ease;
         }
 
-        /* 响应式设计 */
-        @media (max-width: 768px) {
+        section img:hover {
+            transform: scale(1.02);
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin: 1.5rem 0;
+        }
+
+        /* 优雅的页脚 */
+        footer {
+            background: var(--secondary);
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 1024px) {
             main {
-                flex-wrap: wrap;
-                padding: 1rem;
+                grid-template-columns: 1fr;
+                padding: 2rem;
             }
+
             aside {
-                flex: 1 1 100%;
+                position: static;
+            }
+
+            section {
+                padding: 2rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 4rem 1rem;
+            }
+
+            header img {
+                max-width: 240px;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                padding: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <!-- 实验2要求1：修改logo路径 -->
         <img src="images/headerimg.png" alt="地球日logo">
-        
     </header>
     
     <nav>
         <ul>
-            <!-- 实验2要求2：修改导航链接 -->
             <li><a href="index.html">首页</a></li>
             <li><a href="list.html">目录</a></li>
             <li><a href="about.html">关于我们</a></li>
@@ -132,41 +260,39 @@
         <aside>
             <h3>做什么</h3>
             <ul>
-                <!-- 实验2要求2：当前位置链接 -->
                 <li><a href="#current">倡导低碳生活</a></li>
-                <li><a href="#current">从身边的小事做起</a></li>
-                <li><a href="#current">从节约资源做起</a></li>
-                <li><a href="#current">科学发展</a></li>
-                <li><a href="#current">公众参与</a></li>
-                <li><a href="#current">防治有毒化学品污染</a></li>
+                <li><a href="#current">从身边小事做起</a></li>
+                <li><a href="#current">节约资源实践</a></li>
+                <li><a href="#current">可持续发展</a></li>
+                <li><a href="#current">公众参与计划</a></li>
+                <li><a href="#current">污染防治行动</a></li>
             </ul>
         </aside>
 
         <section>
-            <!-- 实验2要求1：添加内容区图片 -->
             <img src="images/greenery.png" alt="环保绿化">
-            <h2>地球日</h2>
-            <p>每年的4月22日，是一个专为世界环境保护而设立的节日，旨在提高民众对于现有环境问题的意识，并动员民众参与到环保运动中，通过绿色低碳生活，改善地球的整体环境。地球日由盖洛登·尼尔森和丹尼斯·海斯于1970年发起。地球日的活动已发展至全球192个国家，每年有超过10亿人参与其中，使其成为世界上最大的民间环保节日。中国从20世纪90年代起，每年都会在4月22日举办世界地球日活动。1970年4月22日的地球日活动，是人类有史以来第一次规模宏大的群众性环境保护运动。作为人类现代环保运动的开端，它推动了西方国家环境法规的建立。</p>
-            <p>1970年4月22日的地球日活动，是人类有史以来第一次规模宏大的群众性地球日，作为人类现代环保运动的开端，它推动了西方国家环境法规的建立。</p>
+            <h2>守护我们的蓝色星球</h2>
+            <p>每年的4月22日是世界地球日，这个特殊的日子提醒我们关注地球生态系统的脆弱性。自1970年诞生以来，这项全球性的环保运动已发展成为192个国家、超过10亿人参与的重要环保倡议。在中国，自1990年代起，地球日活动逐渐成为公众参与环境保护的重要平台。</p>
+            <p>地球日的核心价值在于唤醒人们的环保意识，通过具体行动实现环境改善。从最初的街头抗议到如今多元化的环保实践，这个节日见证了全球环保运动的发展历程。2023年的主题"投资我们的星球"强调可持续经济的重要性，呼吁各界共同构建绿色未来。</p>
+            <img src="images/about.gif" alt="广告插播">
+            <p>现代地球日活动包括：清洁能源倡导、塑料污染治理、生物多样性保护等创新实践。我们每个人都可以通过减少碳足迹、支持环保产品、参与社区绿化等方式贡献力量。记住，保护地球不是一天的行动，而是需要365天的持续承诺。</p>
         </section>
 
         <aside>
-            <h3>目录</h3>
+            <h3>探索更多</h3>
             <ul>
-                <!-- 实验2要求2：页面开始位置链接 -->
-                <li><a href="#top">活动影响</a></li>
-                <li><a href="#top">创始人</a></li>
-                <li><a href="#top">历年主题</a></li>
-                <li><a href="#top">历年国内活动</a></li>
-                <li><a href="#top">小背景</a></li>
-                <li><a href="#top">公众参与</a></li>
-                <li><a href="#top">环保组织</a></li>
+                <li><a href="#top">全球环保行动</a></li>
+                <li><a href="#top">环保先驱故事</a></li>
+                <li><a href="#top">年度主题解读</a></li>
+                <li><a href="#top">中国环保历程</a></li>
+                <li><a href="#top">生态保护技术</a></li>
+                <li><a href="#top">公民参与指南</a></li>
             </ul>
         </aside>
     </main>
 
     <footer>
-        <p>&copy;2018, 我们的地球日</p>
+        <p>© 2023 地球守护者联盟 | 共建可持续未来</p>
     </footer>
 </body>
 </html>
