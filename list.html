@@ -1,9 +1,122 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    小卓
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>环保目录 - 地球日</title>
+    <!-- 共用样式 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root, body, nav, header, footer {
+            /* 沿用主页样式 */
+        }
+
+        /* 特有样式 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .article-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .article-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .article-list a {
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .article-list a::before {
+            content: "🌱";
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
-    <img src="images/ad2.jpg" alt="小卓">
+    <header>
+        <img src="images/headerimg.png" alt="地球日logo">
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a class="active" href="list.html">目录</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <div class="category-grid">
+        <!-- 环保行动 -->
+        <div class="category-card">
+            <img class="category-icon" src="images/action-icon.png" alt="行动图标">
+            <h3>环保行动指南</h3>
+            <ul class="article-list">
+                <li><a href="#">垃圾分类全攻略</a></li>
+                <li><a href="#">低碳出行方案</a></li>
+                <li><a href="#">家庭节能技巧</a></li>
+                <li><a href="#">塑料替代方案</a></li>
+            </ul>
+        </div>
+
+        <!-- 知识百科 -->
+        <div class="category-card">
+            <img class="category-icon" src="images/knowledge-icon.png" alt="知识图标">
+            <h3>生态知识库</h3>
+            <ul class="article-list">
+                <li><a href="#">生物多样性保护</a></li>
+                <li><a href="#">气候变化白皮书</a></li>
+                <li><a href="#">可持续能源解析</a></li>
+                <li><a href="#">海洋保护指南</a></li>
+            </ul>
+        </div>
+
+        <!-- 政策法规 -->
+        <div class="category-card">
+            <img class="category-icon" src="images/policy-icon.png" alt="政策图标">
+            <h3>政策与法规</h3>
+            <ul class="article-list">
+                <li><a href="#">全球气候协定</a></li>
+                <li><a href="#">中国环保立法</a></li>
+                <li><a href="#">企业环保标准</a></li>
+                <li><a href="#">碳排放交易机制</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2023 地球知识库 | 智慧环保生态系统</p>
+    </footer>
 </body>
 </html>
