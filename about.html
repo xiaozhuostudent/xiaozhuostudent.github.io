@@ -1,9 +1,150 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    小卓
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 地球日</title>
+    <style>
+        /* 特有样式 */
+        .about-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .mission-statement {
+            background: linear-gradient(45deg, var(--primary), #21897E);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-statement::before {
+            content: "🌍";
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.1;
+            right: -30px;
+            top: -30px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 3px solid var(--accent);
+        }
+
+        .history-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            padding: 2rem;
+            margin-left: 120px;
+            border-left: 3px solid var(--primary);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: attr(data-year);
+            position: absolute;
+            left: -130px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: white;
+            width: 80px;
+            text-align: center;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
-    <img src="images/b-ad4.jpg" alt="小卓">
+    <header>
+        <img src="images/headerimg.png" alt="地球日logo">
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="list.html">目录</a></li>
+            <li><a class="active" href="about.html">关于我们</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-container">
+        <!-- 使命宣言 -->
+        <div class="mission-statement">
+            <h2>我们的使命</h2>
+            <p>致力于通过教育、创新和社区行动，推动全球环境可持续发展。自2010年成立以来，我们已发起200+环保项目，影响超过500万公众参与绿色行动。</p>
+        </div>
+
+        <!-- 团队介绍 -->
+        <div class="team-grid">
+            <div class="team-member">
+                <img class="member-photo" src="images/team1.jpg" alt="创始人">
+                <h4>刘家傲</h4>
+                <p>环境科学博士<br>15年环保领域经验</p>
+            </div>
+            <div class="team-member">
+                <img class="member-photo" src="images/team2.jpg" alt="教育总监">
+                <h4>郭文彬</h4>
+                <p>可持续发展专家<br>国际课程设计师</p>
+            </div>
+            <div class="team-member">
+                <img class="member-photo" src="images/team3.jpg" alt="技术主管">
+                <h4> 梁淇韬</h4>
+                <p>清洁能源工程师<br>技术创新负责人</p>
+            </div>
+        </div>
+
+        <!-- 发展历程 -->
+        <div class="history-timeline">
+            <div class="timeline-item" data-year="2010">
+                <h4>机构成立</h4>
+                <p>在北京成立首个办公室，启动社区垃圾分类试点项目</p>
+            </div>
+            <div class="timeline-item" data-year="2015">
+                <h4>国际拓展</h4>
+                <p>与联合国环境署建立合作伙伴关系，开展全球气候教育</p>
+            </div>
+            <div class="timeline-item" data-year="2020">
+                <h4>数字转型</h4>
+                <p>推出环保行动APP，实现200万+用户在线参与</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2023 牢兵工作室</p>
+    </footer>
 </body>
 </html>
